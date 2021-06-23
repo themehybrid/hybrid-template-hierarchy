@@ -1,0 +1,32 @@
+{
+	"name"        : "themehybrid/hybrid-template-hierarchy",
+	"description" : "Smarter and more flexible template hierarchy for WordPress.",
+	"keywords"    : [ "wordpress" ],
+	"homepage"    : "https://github.com/themehybrid/hybrid-template",
+	"license"     : "GPL-2.0-or-later",
+	"authors"     : [
+		{
+			"name"     : "Justin Tadlock",
+			"email"    : "justintadlock@gmail.com",
+			"homepage" : "https://themehybrid.com",
+			"role"     : "Developer"
+		}
+	],
+	"support"     : {
+		"issues" : "https://github.com/themehybrid/hybrid-template-hierarchy/issues",
+		"forum"  : "https://themehybrid.com/board/forums/hybrid-core"
+	},
+	"autoload"    : {
+		"psr-4" : {
+			"Hybrid\\Template\\Hierarchy\\" : "src/"
+		},
+		"files" : [
+			"src/functions-helpers.php"
+		]
+	},
+	"require"     : {
+		"php"                          : ">=5.6",
+		"themehybrid/hybrid-contracts" : "^1.0.0",
+		"themehybrid/hybrid-tools"     : "^1.0.0"
+	}
+}
