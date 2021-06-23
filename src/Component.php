@@ -20,6 +20,8 @@ namespace Hybrid\Template\Hierarchy;
 use WP_User;
 use Hybrid\Template\Hierarchy\Contracts\Hierarchy;
 
+use function Hybrid\Template\filter_templates;
+
 /**
  * Overwrites the core WP template hierarchy.
  *
