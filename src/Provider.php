@@ -14,8 +14,8 @@
 
 namespace Hybrid\Template\Hierarchy;
 
-use Hybrid\Template\Contracts\Hierarchy;
-use Hybrid\Tools\ServiceProvider;
+use Hybrid\Core\ServiceProvider;
+use Hybrid\Template\Hierarchy\Contracts\Hierarchy;
 
 /**
  * Template hierarchy provider class.
