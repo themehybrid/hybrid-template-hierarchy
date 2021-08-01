@@ -34,10 +34,7 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register() {
-
 		$this->app->singleton( Hierarchy::class, Component::class );
-
-		$this->app->alias( Hierarchy::class, 'template/hierarchy' );
 	}
 
 	/**
@@ -48,7 +45,6 @@ class Provider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-
 		$this->app->resolve( Hierarchy::class )->boot();
 	}
 }

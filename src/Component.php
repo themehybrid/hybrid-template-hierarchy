@@ -128,7 +128,6 @@ class Component implements Hierarchy {
 	 * @return array
 	 */
 	public function hierarchy() {
-
 		return $this->hierarchy;
 	}
 
@@ -298,7 +297,6 @@ class Component implements Hierarchy {
 
 		// Add role-based templates for the user.
 		if ( is_array( $user->roles ) ) {
-
 			foreach ( $user->roles as $role ) {
 				$templates[] = "user-role-{$role}.php";
 			}
@@ -343,22 +341,18 @@ class Component implements Hierarchy {
 
 		// If viewing a daily archive.
 		} elseif ( is_day() ) {
-
 			$templates[] = 'day.php';
 
 		// If viewing a weekly archive.
 		} elseif ( get_query_var( 'w' ) ) {
-
 			$templates[] = 'week.php';
 
 		// If viewing a monthly archive.
 		} elseif ( is_month() ) {
-
 			$templates[] = 'month.php';
 
 		// If viewing a yearly archive.
 		} elseif ( is_year() ) {
-
 			$templates[] = 'year.php';
 		}
 
@@ -445,7 +439,6 @@ class Component implements Hierarchy {
 		// doesn't exist or a plugin is telling us it's doing
 		// something custom.
 		if ( ! is_string( $template ) ) {
-
 			return $template;
 		}
 

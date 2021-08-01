@@ -26,7 +26,6 @@ if ( ! function_exists( __NAMESPACE__ . '\\hierarchy' ) ) {
 	 * @return array
 	 */
 	function hierarchy() {
-
 		return apply_filters(
 			'hybrid/template/hierarchy',
 			App::resolve( Hierarchy::class )->hierarchy()
