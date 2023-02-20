@@ -15,7 +15,7 @@
 namespace Hybrid\Template\Hierarchy;
 
 use Hybrid\Template\Hierarchy\Contracts\Hierarchy;
-use Hybrid\Proxies\App;
+use Hybrid\App;
 
 if ( ! function_exists( __NAMESPACE__ . '\\hierarchy' ) ) {
 	/**
