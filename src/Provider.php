@@ -5,10 +5,11 @@
  * This is the service provider for the template hierarchy. It's used to register
  * the template hierarchy with the container and boot it when needed.
  *
- * @package   HybridCore
- * @author    Justin Tadlock <justintadlock@gmail.com>
- * @copyright Copyright (c) 2008 - 2021, Justin Tadlock
- * @link      https://themehybrid.com/hybrid-core
+ * @package   HybridTemplateHierarchy
+ * @link      https://github.com/themehybrid/hybrid-template-hierarchy
+ *
+ * @author    Theme Hybrid
+ * @copyright Copyright (c) 2008 - 2023, Theme Hybrid
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
