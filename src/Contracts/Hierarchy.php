@@ -20,17 +20,20 @@ use Hybrid\Contracts\Bootable;
  * Template hierarchy interface.
  *
  * @since  1.0.0
+ *
  * @access public
  */
 interface Hierarchy extends Bootable {
 
-	/**
-	 * Should return an array of template file names without the file
-	 * extension (`.php`).
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return array
-	 */
-	public function hierarchy();
+    /**
+     * Should return an array of template file names without the file
+     * extension (`.php`).
+     *
+     * @since  1.0.0
+     * @return array
+     *
+     * @access public
+     */
+    public function hierarchy();
+
 }

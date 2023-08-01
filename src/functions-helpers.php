@@ -14,22 +14,23 @@
 
 namespace Hybrid\Template\Hierarchy;
 
-use Hybrid\Template\Hierarchy\Contracts\Hierarchy;
 use Hybrid\App;
+use Hybrid\Template\Hierarchy\Contracts\Hierarchy;
 
 if ( ! function_exists( __NAMESPACE__ . '\\hierarchy' ) ) {
-	/**
-	 * Returns the global hierarchy. This is a wrapper around the values
-	 * stored via the template hierarchy object.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return array
-	 */
-	function hierarchy() {
-		return apply_filters(
-			'hybrid/template/hierarchy',
-			App::resolve( Hierarchy::class )->hierarchy()
-		);
-	}
+    /**
+     * Returns the global hierarchy. This is a wrapper around the values
+     * stored via the template hierarchy object.
+     *
+     * @since  1.0.0
+     * @return array
+     *
+     * @access public
+     */
+    function hierarchy() {
+        return apply_filters(
+            'hybrid/template/hierarchy',
+            App::resolve( Hierarchy::class )->hierarchy()
+        );
+    }
 }
