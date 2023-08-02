@@ -1,10 +1,11 @@
 {
-	"name"        : "themehybrid/hybrid-template-hierarchy",
-	"description" : "Smarter and more flexible template hierarchy for WordPress.",
-	"keywords"    : [ "wordpress" ],
-	"homepage"    : "https://github.com/themehybrid/hybrid-template",
-	"license"     : "GPL-2.0-or-later",
-	"authors"     : [
+	"name": "themehybrid/hybrid-template-hierarchy",
+	"description": "Smarter and more flexible template hierarchy for WordPress.",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress"
+	],
+	"authors": [
 		{
 			"name": "Theme Hybrid",
 			"email": "themehybrid@gmail.com",
@@ -12,22 +13,23 @@
 			"role": "Developer"
 		}
 	],
-	"support"     : {
-		"issues" : "https://github.com/themehybrid/hybrid-template-hierarchy/issues",
-		"forum"  : "https://themehybrid.com/board/forums/hybrid-core"
+	"homepage": "https://github.com/themehybrid/hybrid-template",
+	"support": {
+		"issues": "https://github.com/themehybrid/hybrid-template-hierarchy/issues",
+		"forum": "https://themehybrid.com/board/forums/hybrid-core"
 	},
-	"autoload"    : {
-		"psr-4" : {
-			"Hybrid\\Template\\Hierarchy\\" : "src/"
+	"require": {
+		"php": ">=7.4",
+		"themehybrid/hybrid-contracts": "^1.0 || ^2.0",
+		"themehybrid/hybrid-core": "^6.0 || ^7.0",
+		"themehybrid/hybrid-template": "^1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Hybrid\\Template\\Hierarchy\\": "src/"
 		},
-		"files" : [
+		"files": [
 			"src/functions-helpers.php"
 		]
-	},
-	"require"     : {
-		"php" : ">=7.4",
-		"themehybrid/hybrid-core"      : "^6.0 || ^7.0",
-		"themehybrid/hybrid-contracts" : "^1.0 || ^2.0",
-		"themehybrid/hybrid-template"  : "^1.0"
 	}
 }
