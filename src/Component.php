@@ -24,21 +24,14 @@ use function Hybrid\Template\filter_templates;
 
 /**
  * Overwrites the core WP template hierarchy.
- *
- * @since  1.0.0
- *
- * @access public
  */
 class Component implements Hierarchy {
 
     /**
      * Array of template types in core WP.
      *
-     * @since  1.0.0
      * @link   https://developer.wordpress.org/reference/hooks/type_template_hierarchy/
-     * @var    array
-     *
-     * @access protected
+     * @var array
      */
     protected $types = [
         'index',
@@ -64,10 +57,7 @@ class Component implements Hierarchy {
      * Copy of the located template found when running through the
      * template hierarchy.
      *
-     * @since  1.0.0
-     * @var    string
-     *
-     * @access protected
+     * @var string
      */
     protected $located = '';
 
@@ -75,20 +65,14 @@ class Component implements Hierarchy {
      * An array of the entire template hierarchy for the current page view.
      * This hierarchy does not have the `.php` file name extension.
      *
-     * @since  1.0.0
-     * @var    array
-     *
-     * @access protected
+     * @var array
      */
     protected $hierarchy = [];
 
     /**
      * Sets up template hierarchy filters.
      *
-     * @since  1.0.0
      * @return void
-     *
-     * @access public
      */
     public function boot() {
 
@@ -128,10 +112,7 @@ class Component implements Hierarchy {
     /**
      * Returns the full template hierarchy for the current page load.
      *
-     * @since  1.0.0
      * @return array
-     *
-     * @access public
      */
     public function hierarchy() {
         return $this->hierarchy;
@@ -151,11 +132,8 @@ class Component implements Hierarchy {
      * via the standard page template.  User choice should always trump
      * developer choice.
      *
-     * @since  1.0.0
-     * @param  array $templates
+     * @param array $templates
      * @return array
-     *
-     * @access public
      */
     public function frontPage( $templates ) {
 
@@ -180,11 +158,8 @@ class Component implements Hierarchy {
      * Overrides the default single (singular post) template for all post
      * types, including pages and attachments.
      *
-     * @since  1.0.0
-     * @param  array $templates
+     * @param array $templates
      * @return array
-     *
-     * @access public
      */
     public function single( $templates ) {
 
@@ -249,11 +224,8 @@ class Component implements Hierarchy {
      * allows better organization of taxonomy template files by making
      * categories and post tags work the same way as other taxonomies.
      *
-     * @since  1.0.0
-     * @param  array $templates
+     * @param array $templates
      * @return array
-     *
-     * @access public
      */
     public function taxonomy( $template ) {
 
@@ -286,11 +258,8 @@ class Component implements Hierarchy {
      * abstraction of templates than `is_author()` allows by allowing themes
      * to specify templates for a specific author.
      *
-     * @since  1.0.0
-     * @param  array $templates
+     * @param array $templates
      * @return array
-     *
-     * @access public
      */
     public function author( $templates ) {
 
@@ -325,11 +294,8 @@ class Component implements Hierarchy {
      * abstraction of templates than `is_date()` allows by checking for the
      * year, month, week, day, hour, and minute.
      *
-     * @since  1.0.0
-     * @param  array $templates
+     * @param array $templates
      * @return array
-     *
-     * @access public
      */
     public function date( $templates ) {
 
@@ -378,10 +344,7 @@ class Component implements Hierarchy {
      * Filters a queried template hierarchy for each type of template and
      * looks templates within `resources/views`.
      *
-     * @since  1.0.0
      * @return array
-     *
-     * @access public
      */
     public function templateHierarchy( $templates ) {
 
@@ -417,11 +380,8 @@ class Component implements Hierarchy {
      * that the template hierarchy continues processing. That way, we can
      * capture the entire hierarchy.
      *
-     * @since  1.0.0
-     * @param  string $template
+     * @param string $template
      * @return string
-     *
-     * @access public
      */
     public function template( $template ) {
 
@@ -436,11 +396,8 @@ class Component implements Hierarchy {
      * Filter on `template_include` to make sure we fall back to our
      * located template from earlier.
      *
-     * @since  1.0.0
-     * @param  string $template
+     * @param string $template
      * @return string
-     *
-     * @access public
      */
     public function templateInclude( $template ) {
 

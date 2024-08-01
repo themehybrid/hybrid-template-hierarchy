@@ -20,10 +20,6 @@ use Hybrid\Template\Hierarchy\Contracts\Hierarchy;
 
 /**
  * Template hierarchy provider class.
- *
- * @since  1.0.0
- *
- * @access public
  */
 class Provider extends ServiceProvider {
 
@@ -31,10 +27,7 @@ class Provider extends ServiceProvider {
      * Registration callback that adds a single instance of the template
      * hierarchy to the container.
      *
-     * @since  1.0.0
      * @return void
-     *
-     * @access public
      */
     public function register() {
         $this->app->singleton( Hierarchy::class, Component::class );
@@ -43,10 +36,7 @@ class Provider extends ServiceProvider {
     /**
      * Boots the hierarchy by firing its hooks in the `boot()` method.
      *
-     * @since  1.0.0
      * @return void
-     *
-     * @access public
      */
     public function boot() {
         $this->app->resolve( Hierarchy::class )->boot();
