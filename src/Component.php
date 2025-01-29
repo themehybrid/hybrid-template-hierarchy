@@ -21,6 +21,7 @@ namespace Hybrid\Template\Hierarchy;
 use Hybrid\Template\Hierarchy\Contracts\Hierarchy;
 use WP_User;
 use function Hybrid\Template\filter_templates;
+use function Hybrid\Tools\WordPress\wp_context;
 
 /**
  * Overwrites the core WP template hierarchy.
@@ -137,6 +138,10 @@ class Component implements Hierarchy {
      */
     public function frontPage( $templates ) {
 
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
+
         $templates = [];
 
         if ( ! is_home() ) {
@@ -162,6 +167,10 @@ class Component implements Hierarchy {
      * @return array
      */
     public function single( $templates ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
 
         $templates = [];
 
@@ -228,6 +237,10 @@ class Component implements Hierarchy {
      * @return array
      */
     public function taxonomy( $templates ) {
+		
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
 
         $templates = [];
 
@@ -262,6 +275,10 @@ class Component implements Hierarchy {
      * @return array
      */
     public function author( $templates ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
 
         $templates = [];
 
@@ -298,6 +315,10 @@ class Component implements Hierarchy {
      * @return array
      */
     public function date( $templates ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
 
         $templates = [];
 
@@ -348,6 +369,10 @@ class Component implements Hierarchy {
      */
     public function templateHierarchy( $templates ) {
 
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
+
         // WooCommerce kind of does its own thing on `template_include`.
         // It's top-level `woocommerce.php` template isn't added to the
         // hierarchy until then. So, we're going prepend it to the
@@ -385,6 +410,10 @@ class Component implements Hierarchy {
      */
     public function template( $template ) {
 
+        if ( wp_context()->isSiteEditor() ) {
+            return $template;
+        }
+
         if ( ! $this->located && $template ) {
             $this->located = $template;
         }
@@ -400,6 +429,10 @@ class Component implements Hierarchy {
      * @return string
      */
     public function templateInclude( $template ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $template;
+        }
 
         // If the template is not a string at this point, it either
         // doesn't exist or a plugin is telling us it's doing

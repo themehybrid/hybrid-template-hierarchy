@@ -22,7 +22,8 @@
 		"php": ">=7.4",
 		"themehybrid/hybrid-contracts": "^1.0 || ^2.0",
 		"themehybrid/hybrid-core": "^6.0 || ^7.0",
-		"themehybrid/hybrid-template": "^1.0"
+		"themehybrid/hybrid-template": "^1.0",
+		"themehybrid/hybrid-tools": "^1.0 || ^2.0"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
