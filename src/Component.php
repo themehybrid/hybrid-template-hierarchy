@@ -227,7 +227,7 @@ class Component implements Hierarchy {
      * @param array $templates
      * @return array
      */
-    public function taxonomy( $template ) {
+    public function taxonomy( $templates ) {
 
         $templates = [];
 
