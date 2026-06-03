@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template hierarchy class.
  *
@@ -21,12 +22,12 @@ namespace Hybrid\Template\Hierarchy;
 use Hybrid\Template\Hierarchy\Contracts\Hierarchy;
 use WP_User;
 use function Hybrid\Template\filter_templates;
+use function Hybrid\Tools\WordPress\wp_context;
 
 /**
  * Overwrites the core WP template hierarchy.
  */
 class Component implements Hierarchy {
-
     /**
      * Array of template types in core WP.
      *
@@ -133,9 +134,14 @@ class Component implements Hierarchy {
      * developer choice.
      *
      * @param array $templates
+     *
      * @return array
      */
     public function frontPage( $templates ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
 
         $templates = [];
 
@@ -159,9 +165,14 @@ class Component implements Hierarchy {
      * types, including pages and attachments.
      *
      * @param array $templates
+     *
      * @return array
      */
     public function single( $templates ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
 
         $templates = [];
 
@@ -225,9 +236,14 @@ class Component implements Hierarchy {
      * categories and post tags work the same way as other taxonomies.
      *
      * @param array $templates
+     *
      * @return array
      */
-    public function taxonomy( $template ) {
+    public function taxonomy( $templates ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
 
         $templates = [];
 
@@ -259,9 +275,14 @@ class Component implements Hierarchy {
      * to specify templates for a specific author.
      *
      * @param array $templates
+     *
      * @return array
      */
     public function author( $templates ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
 
         $templates = [];
 
@@ -295,9 +316,14 @@ class Component implements Hierarchy {
      * year, month, week, day, hour, and minute.
      *
      * @param array $templates
+     *
      * @return array
      */
     public function date( $templates ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
 
         $templates = [];
 
@@ -348,6 +374,10 @@ class Component implements Hierarchy {
      */
     public function templateHierarchy( $templates ) {
 
+        if ( wp_context()->isSiteEditor() ) {
+            return $templates;
+        }
+
         // WooCommerce kind of does its own thing on `template_include`.
         // It's top-level `woocommerce.php` template isn't added to the
         // hierarchy until then. So, we're going prepend it to the
@@ -381,9 +411,14 @@ class Component implements Hierarchy {
      * capture the entire hierarchy.
      *
      * @param string $template
+     *
      * @return string
      */
     public function template( $template ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $template;
+        }
 
         if ( ! $this->located && $template ) {
             $this->located = $template;
@@ -397,9 +432,14 @@ class Component implements Hierarchy {
      * located template from earlier.
      *
      * @param string $template
+     *
      * @return string
      */
     public function templateInclude( $template ) {
+
+        if ( wp_context()->isSiteEditor() ) {
+            return $template;
+        }
 
         // If the template is not a string at this point, it either
         // doesn't exist or a plugin is telling us it's doing
@@ -412,5 +452,4 @@ class Component implements Hierarchy {
         // located template from earlier.
         return $template ?: $this->located;
     }
-
 }

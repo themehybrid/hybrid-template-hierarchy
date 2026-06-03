@@ -2,6 +2,16 @@
 
 You can see the changes made via the [commit log](https://github.com/themehybrid/hybrid-template-hierarchy/commits/master) for the latest release.
 
+## [1.0.4] - 2026-06-03
+
+### Changed
+
+- Restrict template filtering to PHP files on frontend
+- Fix typo in `sr/Component.php`
+- Bump min req PHP to 8.2+, and min req WP to 6.9+
+- Update copyright date
+- Update lint php
+
 ## [1.0.3] - 2024-08-01
 
 ### Changed

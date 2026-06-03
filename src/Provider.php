@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template hierarchy service provider.
  *
@@ -22,7 +23,6 @@ use Hybrid\Template\Hierarchy\Contracts\Hierarchy;
  * Template hierarchy provider class.
  */
 class Provider extends ServiceProvider {
-
     /**
      * Registration callback that adds a single instance of the template
      * hierarchy to the container.
@@ -41,5 +41,4 @@ class Provider extends ServiceProvider {
     public function boot() {
         $this->app->resolve( Hierarchy::class )->boot();
     }
-
 }
