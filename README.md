@@ -4,12 +4,12 @@ Hybrid Template Hierarchy is smarter and more flexible template hierarchy for Wo
 
 ## Requirements
 
-* WordPress 4.9+.
-* PHP 7.4+ (preferably 8+).
+* WordPress 6.9+.
+* PHP 8.2+.
 * [Composer](https://getcomposer.org/) for managing PHP dependencies.
 
 ## Copyright and License
 
 This project is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2008&thinsp;&ndash;&thinsp;2024 &copy; [Theme Hybrid](https://themehybrid.com).
+2008&thinsp;&ndash;&thinsp;2026 &copy; [Theme Hybrid](https://themehybrid.com).
