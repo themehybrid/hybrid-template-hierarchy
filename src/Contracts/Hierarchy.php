@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template hierarchy contract.
  *
@@ -20,7 +21,6 @@ use Hybrid\Contracts\Bootable;
  * Template hierarchy interface.
  */
 interface Hierarchy extends Bootable {
-
     /**
      * Should return an array of template file names without the file
      * extension (`.php`).
@@ -28,5 +28,4 @@ interface Hierarchy extends Bootable {
      * @return array
      */
     public function hierarchy();
-
 }

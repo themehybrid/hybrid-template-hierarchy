@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template hierarchy class.
  *
@@ -27,7 +28,6 @@ use function Hybrid\Tools\WordPress\wp_context;
  * Overwrites the core WP template hierarchy.
  */
 class Component implements Hierarchy {
-
     /**
      * Array of template types in core WP.
      *
@@ -134,6 +134,7 @@ class Component implements Hierarchy {
      * developer choice.
      *
      * @param array $templates
+     *
      * @return array
      */
     public function frontPage( $templates ) {
@@ -164,6 +165,7 @@ class Component implements Hierarchy {
      * types, including pages and attachments.
      *
      * @param array $templates
+     *
      * @return array
      */
     public function single( $templates ) {
@@ -234,10 +236,11 @@ class Component implements Hierarchy {
      * categories and post tags work the same way as other taxonomies.
      *
      * @param array $templates
+     *
      * @return array
      */
     public function taxonomy( $templates ) {
-		
+
         if ( wp_context()->isSiteEditor() ) {
             return $templates;
         }
@@ -272,6 +275,7 @@ class Component implements Hierarchy {
      * to specify templates for a specific author.
      *
      * @param array $templates
+     *
      * @return array
      */
     public function author( $templates ) {
@@ -312,6 +316,7 @@ class Component implements Hierarchy {
      * year, month, week, day, hour, and minute.
      *
      * @param array $templates
+     *
      * @return array
      */
     public function date( $templates ) {
@@ -406,6 +411,7 @@ class Component implements Hierarchy {
      * capture the entire hierarchy.
      *
      * @param string $template
+     *
      * @return string
      */
     public function template( $template ) {
@@ -426,6 +432,7 @@ class Component implements Hierarchy {
      * located template from earlier.
      *
      * @param string $template
+     *
      * @return string
      */
     public function templateInclude( $template ) {
@@ -445,5 +452,4 @@ class Component implements Hierarchy {
         // located template from earlier.
         return $template ?: $this->located;
     }
-
 }
