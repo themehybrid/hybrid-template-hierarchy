@@ -2,6 +2,16 @@
 
 You can see the changes made via the [commit log](https://github.com/themehybrid/hybrid-template-hierarchy/commits/master) for the latest release.
 
+## [Unreleased]
+
+### Fixed
+
+- Guard `single()` and `taxonomy()` against a null queried object. Both reset
+  the hierarchy and then read properties off `get_queried_object()`, which is
+  null on any request without a queried post or term -- an admin screen, for
+  one -- producing a run of "Attempt to read property on null" warnings per
+  page load. Both now return the incoming hierarchy untouched instead.
+
 ## [1.0.4] - 2026-06-03
 
 ### Changed
