@@ -396,7 +396,7 @@ class Component implements Hierarchy {
         // hierarchy until then. So, we're going prepend it to the
         // hierarchy here to make the `woocommerce.php` template available.
         if ( function_exists( 'is_woocommerce' ) && is_woocommerce() && ! in_array( 'woocommerce', $this->hierarchy ) ) {
-            $templates = [ 'woocommerce.php' ] + $templates;
+            array_unshift( $templates, 'woocommerce.php' );
         }
 
         // Merge the current template's hierarchy with the overall

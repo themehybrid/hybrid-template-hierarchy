@@ -38,3 +38,13 @@ it( 'leaves the hierarchy alone when there is no queried post or term', function
     expect( $component->single( [ 'single.php' ] ) )->toBe( [ 'single.php' ] )
         ->and( $component->taxonomy( [ 'category.php' ] ) )->toBe( [ 'category.php' ] );
 } );
+
+it( 'puts woocommerce.php first without dropping the most specific template', function () {
+    $GLOBALS['qa_is_woocommerce'] = true;
+
+    $component = new Component();
+    $component->templateHierarchy( [ 'taxonomy-product_cat-shoes.php', 'taxonomy-product_cat.php' ] );
+
+    expect( $component->hierarchy() )
+        ->toBe( [ 'woocommerce', 'taxonomy-product_cat-shoes', 'taxonomy-product_cat' ] );
+} );
