@@ -46,6 +46,7 @@ class Component implements Hierarchy {
         'embed',
         'home',
         'frontpage',
+        'privacypolicy',
         'page',
         'paged',
         'search',

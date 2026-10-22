@@ -48,3 +48,11 @@ it( 'puts woocommerce.php first without dropping the most specific template', fu
     expect( $component->hierarchy() )
         ->toBe( [ 'woocommerce', 'taxonomy-product_cat-shoes', 'taxonomy-product_cat' ] );
 } );
+
+it( 'captures the privacy policy template hierarchy', function () {
+    $component = new Component();
+    $component->boot();
+    get_privacy_policy_template();
+
+    expect( $component->hierarchy() )->toContain( 'privacy-policy' );
+} );
