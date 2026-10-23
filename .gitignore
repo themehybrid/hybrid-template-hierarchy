@@ -5,3 +5,7 @@
 /.phpcs.xml
 *.map
 /.idea
+/qa/vendor
+/qa/.pest
+/qa/.phpunit.cache
+/qa/composer.lock

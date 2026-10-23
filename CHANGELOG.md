@@ -2,6 +2,27 @@
 
 You can see the changes made via the [commit log](https://github.com/themehybrid/hybrid-template-hierarchy/commits/master) for the latest release.
 
+## [1.0.5] - 2026-10-22
+
+### Added
+
+- Add a Pest test suite in `qa/`, a separate Composer project because Pest 5
+  needs PHP 8.4. Run with `composer test`.
+
+### Fixed
+
+- Guard `single()` and `taxonomy()` against a null queried object. Both reset
+  the hierarchy and then read properties off `get_queried_object()`, which is
+  null on any request without a queried post or term -- an admin screen, for
+  one -- producing a run of "Attempt to read property on null" warnings per
+  page load. Both now return the incoming hierarchy untouched instead.
+- Prepend `woocommerce.php` to a WooCommerce view's hierarchy. It was added
+  with an array union, which kept its key and overwrote the first template, so
+  the most specific one (`taxonomy-product_cat-{slug}.php`) was never tried.
+- Capture the privacy policy template hierarchy. `privacypolicy` was missing
+  from the template types, so its hierarchy skipped the views folder and a
+  theme's `privacy-policy.php` view was never found.
+
 ## [1.0.4] - 2026-06-03
 
 ### Changed

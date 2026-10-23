@@ -46,6 +46,7 @@ class Component implements Hierarchy {
         'embed',
         'home',
         'frontpage',
+        'privacypolicy',
         'page',
         'paged',
         'search',
@@ -174,10 +175,17 @@ class Component implements Hierarchy {
             return $templates;
         }
 
-        $templates = [];
-
         // Get the queried post.
         $post = get_queried_object();
+
+        // Every line below dereferences it. There is no queried post on an
+        // admin request, and a filter on a hierarchy hook still runs there, so
+        // without this the whole method reads properties on null.
+        if ( ! $post instanceof \WP_Post ) {
+            return $templates;
+        }
+
+        $templates = [];
 
         // Decode the post name.
         $name = urldecode( $post->post_name );
@@ -245,11 +253,17 @@ class Component implements Hierarchy {
             return $templates;
         }
 
-        $templates = [];
-
         // Get the queried term object.
         $term = get_queried_object();
-        $slug = urldecode( $term->slug );
+
+        // Same as single(): no queried term means nothing to build a
+        // hierarchy from, and every line below reads a property off it.
+        if ( ! $term instanceof \WP_Term ) {
+            return $templates;
+        }
+
+        $templates = [];
+        $slug      = urldecode( $term->slug );
 
         // Remove 'post-format' from the slug.
         if ( 'post_format' === $term->taxonomy ) {
@@ -383,7 +397,7 @@ class Component implements Hierarchy {
         // hierarchy until then. So, we're going prepend it to the
         // hierarchy here to make the `woocommerce.php` template available.
         if ( function_exists( 'is_woocommerce' ) && is_woocommerce() && ! in_array( 'woocommerce', $this->hierarchy ) ) {
-            $templates = [ 'woocommerce.php' ] + $templates;
+            array_unshift( $templates, 'woocommerce.php' );
         }
 
         // Merge the current template's hierarchy with the overall

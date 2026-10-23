@@ -7,6 +7,7 @@
 /changelog.md         export-ignore
 /composer.lock        export-ignore
 /contributing.md      export-ignore
+/qa                   export-ignore
 
 # Handle line endings.
 # See https://help.github.com/articles/dealing-with-line-endings/
